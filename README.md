@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Invoice Parser Tool
 
 This project is a Next.js-based application that processes invoice PDFs and extracts critical details using LlamaParse for PDF parsing. The tool allows users to upload an invoice in PDF format, from which it automatically extracts and displays key information such as customer details, product listings, and the total amount due.
