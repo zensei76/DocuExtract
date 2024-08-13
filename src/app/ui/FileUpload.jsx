@@ -1,4 +1,4 @@
-
+// FileUpload.js
 import React, { useState } from "react";
 
 export default function FileUpload({ onFileUpload, isUploading }) {
@@ -14,8 +14,8 @@ export default function FileUpload({ onFileUpload, isUploading }) {
 	};
 
 	return (
-		<div class='mt-10 max-w-2xl w-full mx-auto px-4 sm:px-6 lg:px-8'>
-			<div class='relative'>
+		<div className='mt-10 max-w-2xl w-full mx-auto px-4 sm:px-6 lg:px-8'>
+			<div className='relative'>
 				<form onSubmit={handleSubmit} className='mb-4'>
 					<input
 						type='file'

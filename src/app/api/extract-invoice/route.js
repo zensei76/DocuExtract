@@ -102,34 +102,45 @@ Words: Also extract the total amount written in words if available.
 
 Sample  Output
 
----
-#### **Customer Details :**
 
-- **Name**: Jane Smith
-- **Address**: 456 Elm Street, Metropolis, NY, 10001
-- **Phone Number**: 2125557890
-- **Email**: janesmith@example.com
-
----
-
-#### **Product Details:**
-
-- **Product Name**: Super Widget
-  - **Rate**: 75.00 INR
-  - **Quantity**: 8
-  - **Amount**: 600.00 INR
-
-- **Product Name**: Super Widget
-  - **Rate**: 75.00 INR
-  - **Quantity**: 8
-  - **Amount**: 600.00 INR
-
----
-
-#### **Total Amount :**
-
-- **Total Amount**: 1050.00 INR
-- **Amount in Words**: One Thousand Fifty Rupees Only
+{
+  "customerDetails": {
+    "name": "Emily Johnson",
+    "address": "789 Maple Avenue, Springfield, IL, 62704",
+    "phone": "217-555-1234",
+    "email": "emilyjohnson@example.com"
+  },
+  "productDetails": [
+    {
+      "productName": "Ultra Widget",
+      "rate": "120.00 INR",
+      "quantity": "5",
+      "amount": "600.00 INR"
+    },
+    {
+      "productName": "Mega Steel",
+      "rate": "500.00 INR",
+      "quantity": "3",
+      "amount": "1500.00 INR"
+    },
+    {
+      "productName": "Nano Gadget",
+      "rate": "200.00 INR",
+      "quantity": "7",
+      "amount": "1400.00 INR"
+    },
+    {
+      "productName": "Eco Widget",
+      "rate": "150.00 INR",
+      "quantity": "4",
+      "amount": "600.00 INR"
+    }
+  ],
+  "totalBill": {
+    "totalAmount": "3,100.00 INR",
+    "totalInWords": "Three Thousand One Hundred Rupees Only"
+  }
+}
 
 
  

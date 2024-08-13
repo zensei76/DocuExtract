@@ -25,7 +25,9 @@ export default function Home() {
 				throw new Error("Failed to process invoice");
 			}
 			const data = await response.json();
+
 			setExtractedData(data.markdown);
+
 			setIsModalOpen(true);
 		} catch (error) {
 			console.error("Error:", error);
@@ -34,16 +36,22 @@ export default function Home() {
 			setIsUploading(false);
 		}
 	};
+	
+
+
+
+
+
 
 	return (
 		<main>
-			<div class='h-screen flex flex-col pb-6'>
-				<div class='h-full flex flex-col justify-center'>
-					<div class='-mt-20 max-w-4xl w-full text-center mx-auto px-4 sm:px-6 lg:px-8'>
-						<h1 class='text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white'>
+			<div className='h-screen flex flex-col pb-6'>
+				<div className='h-full flex flex-col justify-center'>
+					<div className='-mt-20 max-w-4xl w-full text-center mx-auto px-4 sm:px-6 lg:px-8'>
+						<h1 className='text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white'>
 							Welcome to Parser AI
 						</h1>
-						<p class='mt-3 text-gray-600 dark:text-neutral-400'>
+						<p className='mt-3 text-gray-600 dark:text-neutral-400'>
 							Your AI-powered Invoice Extractor
 						</p>
 					</div>
