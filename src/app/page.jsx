@@ -1,12 +1,13 @@
 "use client";
+
 import { useState } from "react";
 import FileUpload from "./ui/FileUpload";
 import Modal from "./ui/Modal";
 
 export default function Home() {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [extractedData, setExtractedData] = useState(null);
-	const [isUploading, setIsUploading] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false); // State for controlling the modal visibility.
+	const [extractedData, setExtractedData] = useState(null); // State for storing extracted invoice data.
+	const [isUploading, setIsUploading] = useState(false); // State for tracking the upload status.
 
 	const handleFileUpload = async (file) => {
 		if (!file) {
@@ -17,18 +18,20 @@ export default function Home() {
 		try {
 			const formData = new FormData();
 			formData.append("pdf", file);
+
+			// Send a POST request to the server to extract data from the uploaded PDF.
 			const response = await fetch("/api/extract-invoice", {
 				method: "POST",
 				body: formData,
 			});
+
 			if (!response.ok) {
 				throw new Error("Failed to process invoice");
 			}
+
 			const data = await response.json();
-
-			setExtractedData(data.markdown);
-
-			setIsModalOpen(true);
+			setExtractedData(data.markdown); // Store the extracted data.
+			setIsModalOpen(true); // Open the modal to display the data.
 		} catch (error) {
 			console.error("Error:", error);
 			alert("Error processing invoice");
@@ -36,12 +39,6 @@ export default function Home() {
 			setIsUploading(false);
 		}
 	};
-	
-
-
-
-
-
 
 	return (
 		<main>
